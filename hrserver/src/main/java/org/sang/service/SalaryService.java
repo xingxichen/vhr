@@ -14,27 +14,28 @@ import java.util.List;
 @Service
 @Transactional
 public class SalaryService {
-    @Autowired
-    SalaryMapper salaryMapper;
-    public int addSalary(Salary salary) {
-        return salaryMapper.addSalary(salary);
-    }
+	@Autowired
+	SalaryMapper salaryMapper;
 
-    public List<Salary> getAllSalary() {
-        return salaryMapper.getAllSalary();
-    }
+	public int addSalary(Salary salary) {
+		return salaryMapper.addSalary(salary);
+	}
 
-    public int updateSalary(Salary salary) {
-        return salaryMapper.updateSalary(salary);
-    }
+	public List<Salary> getAllSalary() {
+		return salaryMapper.getAllSalary();
+	}
 
-    public int deleteSalary(String ids) {
-        String[] split = ids.split(",");
-        return salaryMapper.deleteSalary(split);
-    }
+	public int updateSalary(Salary salary) {
+		return salaryMapper.updateSalary(salary);
+	}
 
-    public int updateEmpSalary(Integer sid, Long eid) {
-        salaryMapper.deleteSalaryByEid(eid);
-        return salaryMapper.addSidAndEid(sid,eid);
-    }
+	public int deleteSalary(String ids) {
+		String[] split = ids.split(",");
+		return salaryMapper.deleteSalary(split);
+	}
+
+	public int updateEmpSalary(Integer sid, Long eid) {
+		salaryMapper.deleteSalaryByEid(eid);
+		return salaryMapper.addSidAndEid(sid, eid);
+	}
 }

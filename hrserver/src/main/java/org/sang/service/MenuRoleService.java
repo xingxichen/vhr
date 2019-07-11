@@ -12,14 +12,14 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class MenuRoleService {
-    @Autowired
-    MenuRoleMapper menuRoleMapper;
+	@Autowired
+	MenuRoleMapper menuRoleMapper;
 
-    public int updateMenuRole(Long rid, Long[] mids) {
-        menuRoleMapper.deleteMenuByRid(rid);
-        if (mids.length == 0) {
-            return 0;
-        }
-        return menuRoleMapper.addMenu(rid, mids);
-    }
+	public int updateMenuRole(Long rid, Long[] mids) {
+		menuRoleMapper.deleteMenuByRid(rid);
+		if (mids.length == 0) {
+			return 0;
+		}
+		return menuRoleMapper.addMenu(rid, mids);
+	}
 }

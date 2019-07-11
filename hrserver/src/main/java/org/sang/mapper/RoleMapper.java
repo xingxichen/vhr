@@ -9,9 +9,9 @@ import java.util.List;
  * Created by sang on 2018/1/1.
  */
 public interface RoleMapper {
-    List<Role> roles();
+	List<Role> roles();
 
-    int addNewRole(@Param("role") String role, @Param("roleZh") String roleZh);
+	int addNewRole(@Param("role") String role, @Param("roleZh") String roleZh);
 
-    int deleteRoleById(Long rid);
+	int deleteRoleById(Long rid);
 }

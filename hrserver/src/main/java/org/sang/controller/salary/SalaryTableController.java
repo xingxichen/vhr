@@ -14,10 +14,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/salary/table")
 public class SalaryTableController {
-    @Autowired
-    DepartmentService departmentService;
-    @RequestMapping("/deps")
-    public List<Department> departments() {
-        return departmentService.getAllDeps();
-    }
+	@Autowired
+	DepartmentService departmentService;
+
+	@RequestMapping("/deps")
+	public List<Department> departments() {
+		return departmentService.getAllDeps();
+	}
 }

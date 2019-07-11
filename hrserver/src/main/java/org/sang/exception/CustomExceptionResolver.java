@@ -16,13 +16,14 @@ import java.util.Map;
  */
 @Component
 public class CustomExceptionResolver implements HandlerExceptionResolver {
-    @Override
-    public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse response, Object o, Exception e) {
-        ModelAndView mv = new ModelAndView(new MappingJackson2JsonView());
-        Map<String, Object> map = new HashMap<>();
-        map.put("status", 500);
-        map.put("msg", "操作失败!");
-        mv.addAllObjects(map);
-        return mv;
-    }
+	@Override
+	public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse response, Object o,
+			Exception e) {
+		ModelAndView mv = new ModelAndView(new MappingJackson2JsonView());
+		Map<String, Object> map = new HashMap<>();
+		map.put("status", 500);
+		map.put("msg", "操作失败!");
+		mv.addAllObjects(map);
+		return mv;
+	}
 }

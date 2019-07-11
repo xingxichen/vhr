@@ -18,23 +18,23 @@ import java.util.List;
 @Transactional
 @CacheConfig(cacheNames = "menus_cache")
 public class MenuService {
-    @Autowired
-    MenuMapper menuMapper;
+	@Autowired
+	MenuMapper menuMapper;
 
 //    @Cacheable(key = "#root.methodName")
-    public List<Menu> getAllMenu(){
-        return menuMapper.getAllMenu();
-    }
+	public List<Menu> getAllMenu() {
+		return menuMapper.getAllMenu();
+	}
 
-    public List<Menu> getMenusByHrId() {
-        return menuMapper.getMenusByHrId(HrUtils.getCurrentHr().getId());
-    }
+	public List<Menu> getMenusByHrId() {
+		return menuMapper.getMenusByHrId(HrUtils.getCurrentHr().getId());
+	}
 
-    public List<Menu> menuTree() {
-        return menuMapper.menuTree();
-    }
+	public List<Menu> menuTree() {
+		return menuMapper.menuTree();
+	}
 
-    public List<Long> getMenusByRid(Long rid) {
-        return menuMapper.getMenusByRid(rid);
-    }
+	public List<Long> getMenusByRid(Long rid) {
+		return menuMapper.getMenusByRid(rid);
+	}
 }

@@ -14,26 +14,26 @@ import java.util.List;
 @Service
 @Transactional
 public class JobLevelService {
-    @Autowired
-    JobLevelMapper jobLevelMapper;
+	@Autowired
+	JobLevelMapper jobLevelMapper;
 
-    public int addJobLevel(JobLevel jobLevel) {
-        if (jobLevelMapper.getJobLevelByName(jobLevel.getName()) != null) {
-            return -1;
-        }
-        return jobLevelMapper.addJobLevel(jobLevel);
-    }
+	public int addJobLevel(JobLevel jobLevel) {
+		if (jobLevelMapper.getJobLevelByName(jobLevel.getName()) != null) {
+			return -1;
+		}
+		return jobLevelMapper.addJobLevel(jobLevel);
+	}
 
-    public List<JobLevel> getAllJobLevels() {
-        return jobLevelMapper.getAllJobLevels();
-    }
+	public List<JobLevel> getAllJobLevels() {
+		return jobLevelMapper.getAllJobLevels();
+	}
 
-    public boolean deleteJobLevelById(String ids) {
-        String[] split = ids.split(",");
-        return jobLevelMapper.deleteJobLevelById(split) == split.length;
-    }
+	public boolean deleteJobLevelById(String ids) {
+		String[] split = ids.split(",");
+		return jobLevelMapper.deleteJobLevelById(split) == split.length;
+	}
 
-    public int updateJobLevel(JobLevel jobLevel) {
-        return jobLevelMapper.updateJobLevel(jobLevel);
-    }
+	public int updateJobLevel(JobLevel jobLevel) {
+		return jobLevelMapper.updateJobLevel(jobLevel);
+	}
 }

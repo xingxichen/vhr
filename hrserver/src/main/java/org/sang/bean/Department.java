@@ -9,101 +9,104 @@ import java.util.List;
  * Created by sang on 2018/1/7.
  */
 public class Department {
-    private Long id;
-    private String name;
-    private Long parentId;
-    private String depPath;
-    private boolean enabled;
-    private boolean isParent;
+	private Long id;
+	private String name;
+	private Long parentId;
+	private String depPath;
+	private boolean enabled;
+	private boolean isParent;
 
-    public Department() {
-    }
+	public Department() {
+	}
 
-    public Department(String name) {
-        this.name = name;
-    }
+	public Department(String name) {
+		this.name = name;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
 
-        Department that = (Department) o;
+		Department that = (Department) o;
 
-        return name != null ? name.equals(that.name) : that.name == null;
-    }
+		return name != null ? name.equals(that.name) : that.name == null;
+	}
 
-    @Override
-    public int hashCode() {
-        return name != null ? name.hashCode() : 0;
-    }
+	@Override
+	public int hashCode() {
+		return name != null ? name.hashCode() : 0;
+	}
 
-    //存储过程执行结果
-    private Integer result;
-    private List<Department> children = new ArrayList<>();
+	// 存储过程执行结果
+	private Integer result;
+	private List<Department> children = new ArrayList<>();
 
-    public List<Department> getChildren() {
-        return children;
-    }
+	public List<Department> getChildren() {
+		return children;
+	}
 
-    public void setChildren(List<Department> children) {
-        this.children = children;
-    }
-    @JsonIgnore
-    public Integer getResult() {
-        return result;
-    }
+	public void setChildren(List<Department> children) {
+		this.children = children;
+	}
 
-    public void setResult(Integer result) {
-        this.result = result;
-    }
+	@JsonIgnore
+	public Integer getResult() {
+		return result;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public void setResult(Integer result) {
+		this.result = result;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public Long getParentId() {
-        return parentId;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setParentId(Long parentId) {
-        this.parentId = parentId;
-    }
+	public Long getParentId() {
+		return parentId;
+	}
 
-    @JsonIgnore
-    public String getDepPath() {
-        return depPath;
-    }
+	public void setParentId(Long parentId) {
+		this.parentId = parentId;
+	}
 
-    public void setDepPath(String depPath) {
-        this.depPath = depPath;
-    }
+	@JsonIgnore
+	public String getDepPath() {
+		return depPath;
+	}
 
-    public boolean isEnabled() {
-        return enabled;
-    }
+	public void setDepPath(String depPath) {
+		this.depPath = depPath;
+	}
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
+	public boolean isEnabled() {
+		return enabled;
+	}
 
-    public boolean isParent() {
-        return isParent;
-    }
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 
-    public void setParent(boolean parent) {
-        isParent = parent;
-    }
+	public boolean isParent() {
+		return isParent;
+	}
+
+	public void setParent(boolean parent) {
+		isParent = parent;
+	}
 }

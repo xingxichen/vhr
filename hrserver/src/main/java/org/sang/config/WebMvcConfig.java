@@ -15,13 +15,13 @@ import java.util.concurrent.Executors;
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
-    @Override
-    public void addFormatters(FormatterRegistry registry) {
-        registry.addConverter(new DateConverter());
-    }
+	@Override
+	public void addFormatters(FormatterRegistry registry) {
+		registry.addConverter(new DateConverter());
+	}
 
-    @Bean
-    public ExecutorService executorService() {
-        return Executors.newCachedThreadPool();
-    }
+	@Bean
+	public ExecutorService executorService() {
+		return Executors.newCachedThreadPool();
+	}
 }

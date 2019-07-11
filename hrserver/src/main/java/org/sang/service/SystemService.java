@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class SystemService {
-    @Autowired
-    SystemMapper systemMapper;
+	@Autowired
+	SystemMapper systemMapper;
 
 }

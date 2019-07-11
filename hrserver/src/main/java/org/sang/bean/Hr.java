@@ -13,129 +13,135 @@ import java.util.List;
  * Created by sang on 2017/12/28.
  */
 public class Hr implements UserDetails {
-    private Long id;
-    private String name;
-    private String phone;
-    private String telephone;
-    private String address;
-    private boolean enabled;
-    private String username;
-    private String password;
-    private String remark;
-    private List<Role> roles;
-    private String userface;
-    @Override
-    public boolean isEnabled() {
-        return enabled;
-    }
-    @Override
-    public String getUsername() {
-        return username;
-    }
-    @JsonIgnore
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-    @JsonIgnore
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-    @JsonIgnore
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-    @JsonIgnore
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<GrantedAuthority> authorities = new ArrayList<>();
-        for (Role role : roles) {
-            authorities.add(new SimpleGrantedAuthority(role.getName()));
-        }
-        return authorities;
-    }
-    @JsonIgnore
-    @Override
-    public String getPassword() {
-        return password;
-    }
+	private Long id;
+	private String name;
+	private String phone;
+	private String telephone;
+	private String address;
+	private boolean enabled;
+	private String username;
+	private String password;
+	private String remark;
+	private List<Role> roles;
+	private String userface;
 
-    public String getUserface() {
-        return userface;
-    }
+	@Override
+	public boolean isEnabled() {
+		return enabled;
+	}
 
-    public void setUserface(String userface) {
-        this.userface = userface;
-    }
+	@Override
+	public String getUsername() {
+		return username;
+	}
 
-    public List<Role> getRoles() {
-        return roles;
-    }
+	@JsonIgnore
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
 
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
-    }
+	@JsonIgnore
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	@JsonIgnore
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	@JsonIgnore
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		List<GrantedAuthority> authorities = new ArrayList<>();
+		for (Role role : roles) {
+			authorities.add(new SimpleGrantedAuthority(role.getName()));
+		}
+		return authorities;
+	}
 
-    public String getName() {
-        return name;
-    }
+	@JsonIgnore
+	@Override
+	public String getPassword() {
+		return password;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getUserface() {
+		return userface;
+	}
 
-    public String getPhone() {
-        return phone;
-    }
+	public void setUserface(String userface) {
+		this.userface = userface;
+	}
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+	public List<Role> getRoles() {
+		return roles;
+	}
 
-    public String getTelephone() {
-        return telephone;
-    }
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getAddress() {
-        return address;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
+	public String getPhone() {
+		return phone;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public String getTelephone() {
+		return telephone;
+	}
 
-    public String getRemark() {
-        return remark;
-    }
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
 
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
 }

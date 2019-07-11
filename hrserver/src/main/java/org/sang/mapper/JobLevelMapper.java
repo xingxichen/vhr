@@ -9,13 +9,13 @@ import java.util.List;
  * Created by sang on 2018/1/11.
  */
 public interface JobLevelMapper {
-    JobLevel getJobLevelByName(String name);
+	JobLevel getJobLevelByName(String name);
 
-    int addJobLevel(@Param("jobLevel") JobLevel jobLevel);
+	int addJobLevel(@Param("jobLevel") JobLevel jobLevel);
 
-    List<JobLevel> getAllJobLevels();
+	List<JobLevel> getAllJobLevels();
 
-    int deleteJobLevelById(@Param("ids") String[] ids);
+	int deleteJobLevelById(@Param("ids") String[] ids);
 
-    int updateJobLevel(@Param("jobLevel") JobLevel jobLevel);
+	int updateJobLevel(@Param("jobLevel") JobLevel jobLevel);
 }
