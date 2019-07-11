@@ -1,18 +1,21 @@
 package org.sang.bean;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Created by sang on 2017/12/28.
  */
 public class Hr implements UserDetails {
+
+	private static final long serialVersionUID = -1397897148599928921L;
 	private Long id;
 	private String name;
 	private String phone;
